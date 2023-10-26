@@ -1,24 +1,27 @@
 public class Main {
 
-    private static int milesPerGallon = 20;
-    private static double gallonsOfGs = 10.0;
-    private static int odometer = 0;
-    public static void main(String[] args) {
+//    private static int milesPerGallon = 10;
+//    private static double gallonsOfGas = 20.0;
+//    private static int odometer = 0;
 
-        System.out.println("Hello world!");
-        System.out.println("Second Line");
+    private static int[] milesPerGallon = {20, 25, 15};
+    private static double[] gallonsOfGas = {10.0, 8, 12};
+    private static int[] odometer = {0, 10000, 20000};
 
-
-        System.out.println("Odometer:"+ odometer + " Gallons of Gas:"+ gallonsOfGs);
+    public static void main(String[] args){
+        System.out.println("In Vehivle main;");
 
         drive(100);
         drive(60);
-
     }
+    private static void drive(int milage) {
+        for(int i = 0; i < 3; i++) {
+            System.out.println(i +". Odometer: " + odometer[i] + " | Gallons of Gas: " + gallonsOfGas[i]);
 
-    private static void drive(int milesDriven) {
-        gallonsOfGs -= (milesDriven / milesPerGallon);
-        odometer += milesDriven;
-        System.out.println("Odometer:"+ odometer+ " Gallons of Gas:"+ gallonsOfGs);
+            gallonsOfGas[i] -= (milage / milesPerGallon[0]);
+            odometer[i] += milage;
+
+            System.out.println(i +". Odometer: " + odometer[i] + " | Gallons of Gas: " + gallonsOfGas[i]);
+        }
     }
-}
+        }
